@@ -26,7 +26,9 @@ const onClickAdd = () => {
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
   deleteButton.addEventListener("click", () => {
-    console.log("削除")
+    // 押された削除ボタンの親にあるliタグ配下を削除
+    const removeTarget = deleteButton.closest("li");
+    document.getElementById("incomplete-list").removeChild(removeTarget)
   })
 
   // liタグの子要素に各要素を設定
